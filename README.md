@@ -37,7 +37,7 @@ https://github.com/kubernetes/cloud-provider-openstack/blob/master/docs/cinder-c
 # git subtree
 
 ```
-git remote add -f --no-tags upstream-copy git@github.com:giantswarm/cloud-provider-openstack.git  
+git remote add -f --no-tags upstream-copy git@github.com:giantswarm/cloud-provider-openstack-app.git  
 
 export version=release-1.22
 ```

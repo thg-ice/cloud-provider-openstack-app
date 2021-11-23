@@ -1,18 +1,16 @@
 apiVersion: v1
 appVersion: 0.0.1
-name: cloud-provider-openstack
+name: cloud-provider-openstack-app
 description: A Helm chart for cloud-provider-openstack
 engine: gotpl
 home: https://github.com/giantswarm/cloud-provider-openstack-app
 
 sources:
 - https://github.com/giantswarm/cloud-provider-openstack-app
-version: 0.0.0 # [[ .Version ]] if you're using architect instead of app-build-suite
+version: [[ .Version ]]
 
 dependencies:
 - name: openstack-cloud-controller-manager
   version: 1.1.2
 - name: openstack-cinder-csi
   version: 1.2.14
-
-

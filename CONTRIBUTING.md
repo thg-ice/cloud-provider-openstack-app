@@ -89,10 +89,10 @@ Go to `github` and create a new repo using the `ginatswarm-template-app` templat
 Clone this repo to your local machine and setup "upstream copy" as remote to track:
 
 ```
-git clone git@github.com:giantswarm/loki-app.git
-cd loki-app
-git rm -r helm/APP-NAME-app && git commit -am "remove template chart" && git push  # optionally remove the chart template
-git remote add -f --no-tags upstream-copy git@github.com:giantswarm/grafana-helm-charts-upstream.git  # add remote
+git clone git@github.com:giantswarm/cloud-provider-openstack-app.git
+cd cloud-provider-openstack-app
+git rm -r helm/cloud-provider-openstack-app && git commit -am "remove template chart" && git push  # optionally remove the chart template
+git remote add -f --no-tags upstream-copy git@github.com:giantswarm/cloud-provider-openstack-app.git  # add remote
 ```
 
 Please not the `--no-tags` flag. If you add it, no tags from remote repo will be added to yours.
