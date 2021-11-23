@@ -1,64 +1,70 @@
-[![CircleCI](https://circleci.com/gh/giantswarm/{APP-NAME}-app.svg?style=shield)](https://circleci.com/gh/giantswarm/{APP-NAME}-app)
+# To run
 
-# {APP-NAME} chart
 
-Giant Swarm offers a {APP-NAME} App which can be installed in workload clusters.
-Here we define the {APP-NAME} chart with its templates and default configuration.
+## modify values.yaml files
 
-**What is this app?**
-**Why did we add it?**
-**Who can use it?**
+`emacs /helm/openstack-cinder-csi/values.yaml`
 
-## Installing
-
-There are 3 ways to install this app onto a workload cluster.
-
-1. [Using our web interface](https://docs.giantswarm.io/ui-api/web/app-platform/#installing-an-app)
-2. [Using our API](https://docs.giantswarm.io/api/#operation/createClusterAppV5)
-3. Directly creating the [App custom resource](https://docs.giantswarm.io/ui-api/management-api/crd/apps.application.giantswarm.io/) on the management cluster.
-
-## Configuring
-
-### values.yaml
-**This is an example of a values file you could upload using our web interface.**
-```
-# values.yaml
+## run helm manually 
 
 ```
+export KUBECONFIG=./<cluster>.kubeconfig 
 
-### Sample App CR and ConfigMap for the management cluster
-If you have access to the Kubernetes API on the management cluster, you could create
-the App CR and ConfigMap directly.
+kubectl label secret cloud-config app.kubernetes.io/managed-by=Helm -n kube-system
+kubectl annotate secret cloud-config meta.helm.sh/release-name=cloud-provider -n kube-system
+kubectl annotate secret cloud-config meta.helm.sh/release-namespace=kube-system -n kube-system
+ 
+#kubectl label daemonset openstack-cloud-controller-manager  app.kubernetes.io/managed-by=Helm -n kube-system
+#kubectl annotate daemonset openstack-cloud-controller-manager  meta.helm.sh/release-name=cloud-provider -n kube-system
+#kubectl annotate daemonset openstack-cloud-controller-manager meta.helm.sh/release-namespace=kube-system -n kube-system
 
-Here is an example that would install the app to
-workload cluster `abc12`:
+k -n kube-system delete daemonset openstack-cloud-controller-manager
+
+ helm install cloud-provider -n kube-system ./helm/cloud-provider-openstack-app/
+
+ ```
+
+# Metrics
+
+https://github.com/kubernetes/cloud-provider-openstack/blob/master/docs/metrics.md
+
+# Support cinder csi features :
+
+https://github.com/kubernetes/cloud-provider-openstack/blob/master/docs/cinder-csi-plugin/using-cinder-csi-plugin.md#supported-features
+
+
+
+# git subtree
 
 ```
-# appCR.yaml
+git remote add -f --no-tags upstream-copy git@github.com:giantswarm/cloud-provider-openstack.git  
 
+export version=release-1.22
 ```
 
-```
-# user-values-configmap.yaml
+## charts/cinder-csi-plugin -> helm/cloud-provider-openstack-app/charts/openstack-cinder-csi
 
 
 ```
+git fetch upstream-copy
+git checkout $version
+git subtree split -P charts/cinder-csi-plugin/ -b temp-split-branch
+git checkout master
+git subtree merge --squash -P helm/cloud-provider-openstack-app/charts/openstack-cinder-csi temp-split-branch
+git push
+git branch -D temp-split-branch
+```
 
-See our [full reference page on how to configure applications](https://docs.giantswarm.io/app-platform/app-configuration/) for more details.
+## charts/openstack-cloud-controller-manager -> helm/cloud-provider-openstack-app/charts/openstack-cloud-controller-manager
 
-## Compatibility
 
-This app has been tested to work with the following workload cluster release versions:
+```
+git fetch upstream-copy
+git checkout $version
+git subtree split -P charts/openstack-cloud-controller-manager -b temp-split-branch
+git checkout master
+git subtree merge --squash -P helm/cloud-provider-openstack-app/charts/openstack-cloud-controller-manager temp-split-branch
+git push
+git branch -D temp-split-branch
+```
 
-*
-
-## Limitations
-
-Some apps have restrictions on how they can be deployed.
-Not following these limitations will most likely result in a broken deployment.
-
-*
-
-## Credit
-
-* {APP HELM REPOSITORY}
