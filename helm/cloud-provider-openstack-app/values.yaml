@@ -25,6 +25,7 @@ cloudConfig:
     ipv6-support-disabled: true
     public-network-name:
   loadBalancer:
+    internal-lb: false
     floating-network-id:
     # network-id:
     # subnet-id:
