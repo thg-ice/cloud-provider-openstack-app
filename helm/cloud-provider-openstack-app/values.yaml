@@ -29,8 +29,8 @@ cloudConfig:
     floating-network-id:
     # network-id:
     # subnet-id:
-  #blockStorage:
-  #metadata:
+  # blockStorage:
+  # metadata:
 
 
 # Check here for config information
