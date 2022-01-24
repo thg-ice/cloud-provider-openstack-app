@@ -90,10 +90,10 @@ openstack-cinder-csi:
   storageClass:
     enabled: true
     delete:
-      isDefault: false
+      isDefault: true
       allowVolumeExpansion: true
     retain:
-      isDefault: true
+      isDefault: false
       allowVolumeExpansion: true
 
 

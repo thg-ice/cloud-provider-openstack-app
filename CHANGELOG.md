@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Set the default reclaim policy to delete.
+
 ## [0.1.1] - 2022-01-04
 
 ### Added
