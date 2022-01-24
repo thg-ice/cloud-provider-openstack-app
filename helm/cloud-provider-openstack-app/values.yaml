@@ -27,6 +27,7 @@ cloudConfig:
   loadBalancer:
     internal-lb: false
     floating-network-id:
+    create-monitor: true
     # network-id:
     # subnet-id:
   # blockStorage:
