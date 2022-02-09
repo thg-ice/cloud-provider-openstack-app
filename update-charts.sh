@@ -12,7 +12,7 @@ git remote add -f upstream-copy git@github.com:kubernetes/cloud-provider-opensta
 #   helm/cloud-provider-openstack-app/charts/openstack-cinder-csi
 set -e
 git fetch upstream-copy
-git checkout ${version}
+git checkout remotes/upstream-copy/${version}
 git subtree split -P charts/cinder-csi-plugin/ -b temp-split-branch
 git checkout ${current_branch}
 if [[ "$1" == '--add' ]]; then
@@ -29,7 +29,7 @@ git branch -D temp-split-branch
 #  helm/cloud-provider-openstack-app/charts/openstack-cloud-controller-manager
 
 git fetch upstream-copy
-git checkout $version
+git checkout remotes/upstream-copy/$version
 git subtree split -P charts/openstack-cloud-controller-manager -b temp-split-branch
 git checkout ${current_branch?}
 
