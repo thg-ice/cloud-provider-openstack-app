@@ -5,23 +5,34 @@ set -x
 
 export version=${CLOUD_PROVIDER_VERSION?}
 export current_branch=$(git rev-parse --abbrev-ref HEAD)
-git remote add -f --no-tags upstream-copy git@github.com:kubernetes/cloud-provider-openstack.git 
+
+git remote add -f upstream-copy git@github.com:kubernetes/cloud-provider-openstack.git 
 
 #charts/cinder-csi-plugin
 # ->
 #   helm/cloud-provider-openstack-app/charts/openstack-cinder-csi
 set -e
 git fetch upstream-copy
+<<<<<<< HEAD
+git checkout remotes/upstream-copy/${version}
+git subtree split -P charts/cinder-csi-plugin/ -b temp-split-branch
+git checkout ${current_branch}
+if [[ "$1" == '--add' ]]; then
+=======
 git checkout ${version}
 git subtree split -P charts/cinder-csi-plugin/ -b temp-split-branch
 git checkout ${current_branch}
 if [$1 -eq '--add']; then
+>>>>>>> master
     git subtree add --squash -P ${CHART_FOLDER?}charts/openstack-cinder-csi temp-split-branch
 else
     git subtree merge --squash -P ${CHART_FOLDER?}charts/openstack-cinder-csi temp-split-branch
 fi
 
+<<<<<<< HEAD
+=======
 #git push
+>>>>>>> master
 git branch -D temp-split-branch
 
 
@@ -30,19 +41,30 @@ git branch -D temp-split-branch
 #  helm/cloud-provider-openstack-app/charts/openstack-cloud-controller-manager
 
 git fetch upstream-copy
+<<<<<<< HEAD
+git checkout remotes/upstream-copy/$version
+=======
 git checkout $version
+>>>>>>> master
 git subtree split -P charts/openstack-cloud-controller-manager -b temp-split-branch
 git checkout ${current_branch?}
 
 
+<<<<<<< HEAD
+if [[ "$1" == '--add' ]]; then
+=======
 if [$1 -eq '--add']; then
+>>>>>>> master
     git subtree add --squash -P ${CHART_FOLDER?}charts/openstack-cloud-controller-manager temp-split-branch
 else
     git subtree merge --squash -P ${CHART_FOLDER?}charts/openstack-cloud-controller-manager temp-split-branch
 
 fi
 
+<<<<<<< HEAD
+=======
 #git push
+>>>>>>> master
 git branch -D temp-split-branch
 
 
