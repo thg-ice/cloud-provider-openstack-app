@@ -52,18 +52,20 @@ rm -rf /tmp/cloud-provider-openstack
 ```
 
 ## Step 2
+
+```bash
 export CLOUD_PROVIDER_VERSION=release-1.23
 export CHART_FOLDER=helm/cloud-provider-openstack-app/
 
 ./update-charts.sh 
-
+```
 
 ## Step 2B ( if step 2 above failed )
 
 
 You will need to reset the subtree because the commit message subtree is looking for is not present or overrriten in a squash.
 
-```
+```bash
 export CLOUD_PROVIDER_VERSION=release-1.23
 export CHART_FOLDER=helm/cloud-provider-openstack-app/
 
