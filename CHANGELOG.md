@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.1] - 2022-02-14
+
+### Changed
+
+- Update helm charts with latest upstream versions
+
 ## [0.2.0] - 2022-01-26
 
 ### Changed
@@ -22,7 +28,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.1.0] - 2021-12-03
 
-[Unreleased]: https://github.com/giantswarm/cloud-provider-openstack-app/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/giantswarm/giantswarm/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/giantswarm/giantswarm/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/giantswarm/cloud-provider-openstack-app/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/giantswarm/cloud-provider-openstack-app/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/giantswarm/cloud-provider-openstack-app/releases/tag/v0.1.0
