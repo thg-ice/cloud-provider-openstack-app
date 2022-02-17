@@ -30,7 +30,8 @@ cloudConfig:
     create-monitor: true
     # network-id:
     # subnet-id:
-  # blockStorage:
+  blockStorage:
+    ignore-volume-az: true
   # metadata:
 
 
