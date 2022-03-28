@@ -43,6 +43,8 @@ openstack-cinder-csi:
   timeout: 3m
 
   csi:
+    snapshotController:
+      enabled: true
     attacher:
       image:
         repository: k8s.gcr.io/sig-storage/csi-attacher
