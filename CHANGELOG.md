@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2022-04-01
+
 ### Changed
 
 - Clean up root values.yaml file.
@@ -41,7 +43,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.1.0] - 2021-12-03
 
-[Unreleased]: https://github.com/giantswarm/cloud-provider-openstack-app/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/giantswarm/cloud-provider-openstack-app/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/giantswarm/cloud-provider-openstack-app/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/giantswarm/cloud-provider-openstack-app/compare/v0.2.2...v0.3.0
 [0.2.2]: https://github.com/giantswarm/cloud-provider-openstack-app/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/giantswarm/cloud-provider-openstack-app/compare/v0.2.0...v0.2.1
