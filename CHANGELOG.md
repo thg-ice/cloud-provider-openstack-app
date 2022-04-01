@@ -9,7 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Cleaned up values.yaml file
+- Clean up root values.yaml file.
+- Update `openstack-cloud-controller-manager` to v1.23.1.
 
 ## [0.3.0] - 2022-03-28
 

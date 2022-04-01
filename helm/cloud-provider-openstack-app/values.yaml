@@ -63,7 +63,9 @@ openstack-cinder-csi:
       allowVolumeExpansion: true
 
 openstack-cloud-controller-manager:
-
+  image:
+    repository: docker.io/k8scloudprovider/openstack-cloud-controller-manager
+    tag: "v1.23.1"
   # Create a service monitor for Prometheus Operator
   # serviceMonitor:
   #  enabled: true
