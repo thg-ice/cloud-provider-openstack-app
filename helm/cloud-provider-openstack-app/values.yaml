@@ -68,7 +68,7 @@ openstack-cinder-csi:
       metadata:
         name: csi-cinder-snapclass
       driver: cinder.csi.openstack.org
-        deletionPolicy: Delete
+      deletionPolicy: Delete
 openstack-cloud-controller-manager:
   image:
     repository: docker.io/k8scloudprovider/openstack-cloud-controller-manager
