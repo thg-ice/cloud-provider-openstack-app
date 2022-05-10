@@ -37,7 +37,7 @@ openstack-cinder-csi:
       image:
         repository: docker.io/k8scloudprovider/cinder-csi-plugin
         pullPolicy: IfNotPresent
-        tag:  # defaults to .Chart.AppVersion
+        tag: # defaults to .Chart.AppVersion
       volumes:
         - name: cacert
           hostPath:
@@ -79,15 +79,17 @@ openstack-cloud-controller-manager:
   controllerExtraArgs: {}
   secret:
     create: false
+  nodeSelector:
+    node-role.kubernetes.io/control-plane: ""
   tolerations:
-  - key: node.cloudprovider.kubernetes.io/uninitialized
-    value: "true"
-    effect: NoSchedule
-  - key: node-role.kubernetes.io/controlplane
-    value: "true"
-    effect: NoSchedule
-  - key: node-role.kubernetes.io/master
-    effect: NoSchedule
-  - key: node-role.kubernetes.io/etcd
-    value: "true"
-    effect: NoExecute
+    - key: node.cloudprovider.kubernetes.io/uninitialized
+      value: "true"
+      effect: NoSchedule
+    - key: node-role.kubernetes.io/controlplane
+      value: "true"
+      effect: NoSchedule
+    - key: node-role.kubernetes.io/master
+      effect: NoSchedule
+    - key: node-role.kubernetes.io/etcd
+      value: "true"
+      effect: NoExecute

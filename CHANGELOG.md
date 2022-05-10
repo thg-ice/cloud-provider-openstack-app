@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- OCCM now only run on control-plane nodes
+
 ## [0.5.1] - 2022-04-29
 
 ### Changed
