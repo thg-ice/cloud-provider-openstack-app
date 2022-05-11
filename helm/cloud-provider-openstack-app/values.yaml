@@ -37,7 +37,7 @@ openstack-cinder-csi:
       image:
         repository: docker.io/k8scloudprovider/cinder-csi-plugin
         pullPolicy: IfNotPresent
-        tag: # defaults to .Chart.AppVersion
+        tag:  # defaults to .Chart.AppVersion
       volumes:
         - name: cacert
           hostPath:
