@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - OCCM now only run on control-plane nodes
+- Bump `VolumeSnapshotClass` version to v1 since v1beta1 is deprecated.
+- Add default annotation to VolumeSnapshotClass.
 
 ## [0.5.1] - 2022-04-29
 
