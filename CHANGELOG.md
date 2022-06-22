@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Remove semi-broken default `ca-certs` mount from
+  `openstack-cloud-controller-manager`. This fixes running it on Flatcar. See
+  https://github.com/kubernetes/cloud-provider-openstack/issues/1923
+
 ## [0.6.0] - 2022-05-23
 
 ### Changed
@@ -36,7 +42,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.3.0] - 2022-03-28
 
-### Added 
+### Added
 
 - Enable snapshotter by default.
 
@@ -53,7 +59,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Set the default reclaim policy to delete.
-- Set default to create Loadbalancer health monitors 
+- Set default to create Loadbalancer health monitors
 
 ## [0.1.1] - 2022-01-04
 
