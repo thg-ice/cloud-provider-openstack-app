@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Add quotes to values in `cloud-config` secret to fix broken conf files when a value starts with `#` character.
+
 ## [0.6.1] - 2022-06-22
 
 ### Fixed
