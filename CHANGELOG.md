@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Add quotes to values in `cloud-config` secret to fix broken conf files when a value starts with `#` character.
+- Fix `openstack-cloud-controller-manager` tolerations for k8s 1.24.
 
 ## [0.6.1] - 2022-06-22
 
