@@ -61,16 +61,16 @@ openstack-cinder-csi:
     retain:
       isDefault: false
       allowVolumeExpansion: true
-    custom: |-
-      ---
-      apiVersion: snapshot.storage.k8s.io/v1
-      kind: VolumeSnapshotClass
-      metadata:
-        name: csi-cinder-snapclass
-        annotations:
-          snapshot.storage.kubernetes.io/is-default-class: "true"
-      driver: cinder.csi.openstack.org
-      deletionPolicy: Delete
+#   custom: |-
+#     ---
+#     apiVersion: snapshot.storage.k8s.io/v1
+#     kind: VolumeSnapshotClass
+#     metadata:
+#       name: csi-cinder-snapclass
+#       annotations:
+#         snapshot.storage.kubernetes.io/is-default-class: "true"
+#     driver: cinder.csi.openstack.org
+#     deletionPolicy: Delete
 openstack-cloud-controller-manager:
   image:
     repository: docker.io/k8scloudprovider/openstack-cloud-controller-manager
