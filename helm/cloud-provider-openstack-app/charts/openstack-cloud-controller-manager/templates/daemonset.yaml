@@ -21,8 +21,10 @@ spec:
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      {{- with .Values.podSecurityContext }}
       securityContext:
-        runAsUser: 1001
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       {{- with .Values.tolerations }}
       tolerations:
         {{- toYaml . | nindent 8 }}
@@ -35,8 +37,10 @@ spec:
             - /bin/openstack-cloud-controller-manager
             - --v={{ .Values.logVerbosityLevel }}
             - --cloud-config=$(CLOUD_CONFIG)
+            - --cluster-name=$(CLUSTER_NAME)
             - --cloud-provider=openstack
             - --use-service-account-credentials=true
+            - --controllers={{- trimAll "," (include "occm.enabledControllers" . ) -}}
             {{- if .Values.serviceMonitor.enabled }}
             - --bind-address=0.0.0.0
             {{- else }}
@@ -76,6 +80,8 @@ spec:
           env:
             - name: CLOUD_CONFIG
               value: /etc/config/cloud.conf
+            - name: CLUSTER_NAME
+              value: {{ .Values.cluster.name }}
       {{- if .Values.extraInitContainers }}
       initContainers: {{ toYaml .Values.extraInitContainers | nindent 6 }}
       {{- end }}
