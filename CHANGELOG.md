@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Update `openstack-cloud-controller-manager` to v1.24.6.
+- Update `openstack-cinder-csi` to v1.24.6.
+
 ## [0.7.0] - 2022-10-11
 
 ### Changed
