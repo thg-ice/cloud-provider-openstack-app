@@ -55,7 +55,7 @@ rm -rf /tmp/cloud-provider-openstack
 
 ```bash
 export CLOUD_PROVIDER_VERSION=v1.23.1
-export CHART_FOLDER=helm/cloud-provider-openstack-app/charts/
+export CHART_FOLDER=helm/cloud-provider-openstack-app/
 ./update_charts.sh --merge
 ```
 
