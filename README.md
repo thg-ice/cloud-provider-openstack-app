@@ -52,27 +52,12 @@ rm -rf /tmp/cloud-provider-openstack
 ```
 
 ## Step 2
-<<<<<<< HEAD
 
 ```bash
-export CLOUD_PROVIDER_VERSION=release-1.23
-export CHART_FOLDER=helm/cloud-provider-openstack-app/
-=======
 export CLOUD_PROVIDER_VERSION=v1.23.1
 export CHART_FOLDER=helm/cloud-provider-openstack-app/charts/
-
 ./update_charts.sh --merge
-
-
-## Step 2B ( if step 2 above failed )
-
-
-You will need to reset the subtree because the commit message subtree is looking for is not present or overrriten in a squash.
->>>>>>> master
-
-./update-charts.sh 
 ```
-<<<<<<< HEAD
 
 ## Step 2B ( if step 2 above failed )
 
@@ -84,7 +69,7 @@ export CLOUD_PROVIDER_VERSION=release-1.23
 export CHART_FOLDER=helm/cloud-provider-openstack-app/
 
 #Cleanup
-git branch -D temp-split-branch                                                                                                                                                                  
+git branch -D temp-split-branch
 git remote remove upstream-copy
 
 git rm -rf ${CHART_FOLDER}charts/openstack-cinder-csi
@@ -94,15 +79,6 @@ git commit -m "Cleanup upstream chart folder"
 
 
 ./update-charts.sh --add
-=======
-export CLOUD_PROVIDER_VERSION=v1.23.1
-export CHART_FOLDER=helm/cloud-provider-openstack-app/charts/
-git rm ${CHART_FOLDER}charts/openstack-cinder-csi
-git rm ${CHART_FOLDER}charts/openstack-cloud-controller-manager
-
-./update_charts.sh --add
->>>>>>> master
-
 ```
 
 ## Step 3
