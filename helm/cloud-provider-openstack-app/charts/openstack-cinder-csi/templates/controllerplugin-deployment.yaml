@@ -2,6 +2,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: {{ include "cinder-csi.name" . }}-controllerplugin
+  namespace: {{ .Release.Namespace }}
   labels:
     {{- include "cinder-csi.controllerplugin.labels" . | nindent 4 }}
 spec:
@@ -113,7 +114,7 @@ spec:
             - name: CSI_ENDPOINT
               value: unix://csi/csi.sock
             - name: CLOUD_CONFIG
-              value: /etc/kubernetes/cloud.conf
+              value: /etc/kubernetes/{{ .Values.secret.filename }}
             - name: CLUSTER_NAME
               value: "{{ .Values.clusterID }}"
           ports:
