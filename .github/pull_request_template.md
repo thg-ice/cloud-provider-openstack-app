@@ -17,13 +17,7 @@ This PR:
 Description on how cloud-provider-openstack-app can be tested.
 
 - [ ] fresh install works
-  - [ ] AWS
-  - [ ] Azure
-  - [ ] KVM
 - [ ] upgrade from previous version works
-  - [ ] AWS
-  - [ ] Azure
-  - [ ] KVM
 
 #### Other testing
 
