@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## 0.8.0 - 2023-03-15
+
+- No changes from the previous release. This marks the diverging point in THG-ICE's fork.
+
 ## [0.7.0] - 2022-10-11
 
 ### Changed
