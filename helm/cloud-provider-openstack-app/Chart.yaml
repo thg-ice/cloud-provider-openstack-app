@@ -3,10 +3,10 @@ appVersion: 0.0.1
 name: cloud-provider-openstack-app
 description: A Helm chart for cloud-provider-openstack
 engine: gotpl
-home: https://github.com/giantswarm/cloud-provider-openstack-app
+home: https://github.com/thg-ice/cloud-provider-openstack-app
 
 sources:
-- https://github.com/giantswarm/cloud-provider-openstack-app
+- https://github.com/thg-ice/cloud-provider-openstack-app
 version: [[ .Version ]]
 
 dependencies:
