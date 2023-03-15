@@ -62,7 +62,7 @@
             "type": "object",
             "properties": {
                 "clusterID": {
-                    "type": "object"
+                    "type": "string"
                 },
                 "csi": {
                     "type": "object",
@@ -181,6 +181,14 @@
         "openstack-cloud-controller-manager": {
             "type": "object",
             "properties": {
+                "cluster": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        }
+                    }
+                },
                 "controllerExtraArgs": {
                     "type": "object"
                 },

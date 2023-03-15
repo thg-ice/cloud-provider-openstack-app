@@ -29,7 +29,7 @@ cloudConfig:
   # metadata:
 
 openstack-cinder-csi:
-  clusterID: {}
+  clusterID: ""
   csi:
     snapshotController:
       enabled: true
@@ -72,6 +72,8 @@ openstack-cinder-csi:
 #     driver: cinder.csi.openstack.org
 #     deletionPolicy: Delete
 openstack-cloud-controller-manager:
+  cluster:
+    name: ""
   image:
     repository: docker.io/k8scloudprovider/openstack-cloud-controller-manager
     tag: ""  # defaults to .Chart.AppVersion
