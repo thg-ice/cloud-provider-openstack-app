@@ -10,18 +10,18 @@ secret:
 
 cloudConfig:
   global:
-    auth-url:
-    username:
-    password:
-    tenant-id:
-    domain-name:
-    region:
+    auth-url: ""
+    username: ""
+    password: ""
+    tenant-id: ""
+    domain-name: ""
+    region: ""
   networking:
     ipv6-support-disabled: true
-    public-network-name:
+    public-network-name: ""
   loadBalancer:
     internal-lb: false
-    floating-network-id:
+    floating-network-id: ""
     create-monitor: true
     # network-id:
     # subnet-id:
@@ -37,7 +37,7 @@ openstack-cinder-csi:
       image:
         repository: docker.io/k8scloudprovider/cinder-csi-plugin
         pullPolicy: IfNotPresent
-        tag:  # defaults to .Chart.AppVersion
+        tag: ""  # defaults to .Chart.AppVersion
       volumes:
         - name: cacert
           hostPath:
@@ -74,7 +74,7 @@ openstack-cinder-csi:
 openstack-cloud-controller-manager:
   image:
     repository: docker.io/k8scloudprovider/openstack-cloud-controller-manager
-    tag: "v1.23.1"
+    tag: ""  # defaults to .Chart.AppVersion
   # Create a service monitor for Prometheus Operator
   # serviceMonitor:
   #  enabled: true
