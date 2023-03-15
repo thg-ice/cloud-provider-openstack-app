@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Update `openstack-cloud-controller-manager` to v1.24.6.
+- Update `openstack-cinder-csi` to v1.24.6.
+
 ## 0.8.0 - 2023-03-15
 
 - No changes from the previous release. This marks the diverging point in THG-ICE's fork.
@@ -88,7 +91,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.1.0] - 2021-12-03
 
-[Unreleased]: https://github.com/giantswarm/cloud-provider-openstack-app/compare/v0.7.0...HEAD
+[Unreleased]: https://github.com/thg-ice/cloud-provider-openstack-app/compare/v0.8.0...HEAD
 [0.7.0]: https://github.com/giantswarm/cloud-provider-openstack-app/compare/v0.6.2...v0.7.0
 [0.6.2]: https://github.com/giantswarm/cloud-provider-openstack-app/compare/v0.6.1...v0.6.2
 [0.6.1]: https://github.com/giantswarm/cloud-provider-openstack-app/compare/v0.6.0...v0.6.1
