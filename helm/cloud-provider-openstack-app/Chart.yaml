@@ -11,7 +11,7 @@ version: [[ .Version ]]
 
 dependencies:
 - name: openstack-cloud-controller-manager
-  version: 1.27.1
+  version: 2.27.1
 - name: openstack-cinder-csi
   version: 2.27.1
 
