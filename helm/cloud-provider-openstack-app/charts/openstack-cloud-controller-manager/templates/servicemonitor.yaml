@@ -5,6 +5,11 @@ metadata:
   labels:
     {{- include "occm.labels" . | nindent 4 }}
   name: {{ include "occm.name" . }}
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    {{- with .Values.commonAnnotations }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
 spec:
   endpoints:
   - bearerTokenFile: /var/run/secrets/kubernetes.io/serviceaccount/token

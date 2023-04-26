@@ -7,48 +7,54 @@ timeout: 3m
 csi:
   attacher:
     image:
-      repository: k8s.gcr.io/sig-storage/csi-attacher
-      tag: v3.4.0
+      repository: registry.k8s.io/sig-storage/csi-attacher
+      tag: v4.2.0
       pullPolicy: IfNotPresent
     resources: {}
+    extraArgs: {}
   provisioner:
     topology: "true"
     image:
-      repository: k8s.gcr.io/sig-storage/csi-provisioner
-      tag: v3.1.0
+      repository: registry.k8s.io/sig-storage/csi-provisioner
+      tag: v3.4.1
       pullPolicy: IfNotPresent
     resources: {}
+    extraArgs: {}
   snapshotter:
     image:
-      repository: k8s.gcr.io/sig-storage/csi-snapshotter
-      tag: v5.0.1
+      repository: registry.k8s.io/sig-storage/csi-snapshotter
+      tag: v6.2.1
       pullPolicy: IfNotPresent
     resources: {}
+    extraArgs: {}
   resizer:
     image:
-      repository: k8s.gcr.io/sig-storage/csi-resizer
-      tag: v1.4.0
+      repository: registry.k8s.io/sig-storage/csi-resizer
+      tag: v1.7.0
       pullPolicy: IfNotPresent
     resources: {}
+    extraArgs: {}
   livenessprobe:
     image:
-      repository: k8s.gcr.io/sig-storage/livenessprobe
-      tag: v2.6.0
+      repository: registry.k8s.io/sig-storage/livenessprobe
+      tag: v2.9.0
       pullPolicy: IfNotPresent
     failureThreshold: 5
     initialDelaySeconds: 10
     timeoutSeconds: 10
     periodSeconds: 60
     resources: {}
+    extraArgs: {}
   nodeDriverRegistrar:
     image:
-      repository: k8s.gcr.io/sig-storage/csi-node-driver-registrar
-      tag: v2.5.0
+      repository: registry.k8s.io/sig-storage/csi-node-driver-registrar
+      tag: v2.6.2
       pullPolicy: IfNotPresent
     resources: {}
+    extraArgs: {}
   plugin:
     image:
-      repository: docker.io/k8scloudprovider/cinder-csi-plugin
+      repository: registry.k8s.io/provider-os/cinder-csi-plugin
       pullPolicy: IfNotPresent
       tag:  # defaults to .Chart.AppVersion
     volumes:
@@ -85,15 +91,7 @@ csi:
       nodeSelector: {}
       tolerations: []
     resources: {}
-  snapshotController:
-    enabled: false
-    image:
-      repository: k8s.gcr.io/sig-storage/snapshot-controller
-      tag: v5.0.1
-    resources: {}
-    affinity: {}
-    nodeSelector: {}
-    tolerations: []
+    extraArgs: {}
 
 # Log verbosity level.
 # See https://github.com/kubernetes/community/blob/master/contributors/devel/sig-instrumentation/logging.md
@@ -124,14 +122,7 @@ storageClass:
     isDefault: false
     allowVolumeExpansion: true
 # any kind of custom StorageClasses
-#  custom: |-
-#    ---
-#    apiVersion: snapshot.storage.k8s.io/v1beta1
-#    kind: VolumeSnapshotClass
-#    metadata:
-#      name: csi-cinder-snapclass
-#    driver: cinder.csi.openstack.org
-#    deletionPolicy: Delete
+#   custom: |-
 #     ---
 #     apiVersion: storage.k8s.io/v1
 #     kind: StorageClass
@@ -142,9 +133,19 @@ storageClass:
 #     allowVolumeExpansion: true
 #     parameters:
 #       type: SAS
+#     ---
+#     apiVersion: snapshot.storage.k8s.io/v1
+#     kind: VolumeSnapshotClass
+#     metadata:
+#       name: csi-cinder-snapclass
+#     driver: cinder.csi.openstack.org
+#     deletionPolicy: Delete
 
 # You may set ID of the cluster where openstack-cinder-csi is deployed. This value will be appended
 # to volume metadata in newly provisioned volumes as `cinder.csi.openstack.org/cluster=<cluster ID>`.
 clusterID: "kubernetes"
 
 priorityClassName: ""
+
+imagePullSecrets: []
+# - name: my-imagepull-secret
