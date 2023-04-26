@@ -35,7 +35,7 @@ openstack-cinder-csi:
       enabled: true
     plugin:
       image:
-        repository: docker.io/k8scloudprovider/cinder-csi-plugin
+        repository: registry.k8s.io/provider-os/cinder-csi-plugin
         pullPolicy: IfNotPresent
         tag: ""  # defaults to .Chart.AppVersion
       volumes:
@@ -75,7 +75,7 @@ openstack-cloud-controller-manager:
   cluster:
     name: ""
   image:
-    repository: docker.io/k8scloudprovider/openstack-cloud-controller-manager
+    repository: registry.k8s.io/provider-os/openstack-cloud-controller-manager
     tag: ""  # defaults to .Chart.AppVersion
   # Create a service monitor for Prometheus Operator
   # serviceMonitor:
